@@ -2,68 +2,73 @@
 
 FPGA-based audio playback system that streams music directly from flash memory with real-time keyboard-controlled playback.
 
-Overview
+
+**Overview**
 
 This project implements an iPod-style audio playback system entirely in RTL on an FPGA. Audio samples are read from external flash memory and streamed to a DAC with precise timing and synchronization.
 
 The system supports:
 
-Start, stop, rewind, and playback speed adjustment via keyboard input
+- Start, stop, rewind, and playback speed adjustment via keyboard input
 
-Real-time audio streaming to a DAC
+- Real-time audio streaming to a DAC
 
-LED display of live audio signal strength
+- LED display of live audio signal strength
 
-System Architecture
 
-The design is modular and built around multiple interacting finite state machines (FSMs).
+**System Architecture**
+
+The design is modular and built around multiple interacting finite state machines.
 
 Key components include:
 
-Flash memory interface using the Avalon bus protocol
+- Flash memory interface using the Avalon bus protocol
 
-Audio streaming logic with timing synchronization
+- Audio streaming logic with timing synchronization
 
-Keyboard input handler
+- Keyboard input handler
 
-Clock division and clock domain synchronization
+- Clock division and clock domain synchronization
 
-PicoBlaze soft processor for real-time audio signal strength computation
+- PicoBlaze soft processor for real-time audio signal strength computation
 
-Implementation Details
 
-Designed RTL modules in SystemVerilog
+**Implementation Details**
 
-Implemented FSMs to manage memory addressing, timing control, and data flow
+- Designed RTL modules in SystemVerilog
 
-Integrated flash memory and DAC communication over Avalon bus
+- Implemented FSMs to manage memory addressing, timing control, and data flow
 
-Managed clock synchronization between FPGA system clock and DAC clock
+- Integrated flash memory and DAC communication over Avalon bus
 
-Incrementally integrated and validated modules in hardware using Intel Quartus Prime
+- Managed clock synchronization between FPGA system clock and DAC clock
 
-Verification
+- Incrementally integrated and validated modules in hardware using Intel Quartus Prime
 
-Each module was verified before hardware deployment:
 
-Developed SystemVerilog testbenches for all major modules
+**Verification**
 
-Verified I/O behavior in ModelSim
+- Each module was verified before hardware deployment:
 
-Debugged internal FPGA signals using SignalTap logic analyzer
+- Developed SystemVerilog testbenches for all major modules
 
-Performed iterative hardware validation after synthesis
+- Verified I/O behavior in ModelSim
 
-Tools & Technologies
+- Debugged internal FPGA signals using SignalTap logic analyzer
 
-SystemVerilog
+- Performed iterative hardware validation after synthesis
 
-Intel Quartus Prime
 
-ModelSim
+**Tools & Technologies**
 
-PicoBlaze soft processor
+- SystemVerilog
 
-Avalon bus interface
+- Intel Quartus Prime
 
-SignalTap logic analyzer
+- ModelSim
+
+- PicoBlaze soft processor
+
+- Avalon bus interface
+
+- SignalTap logic analyzer
